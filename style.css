@@ -5,10 +5,10 @@ div, ul, img {
 */
 body {
   background-image: url('../images/background.jpg');
-  background-color: #ddd;
+  background-color: #F0F3C7;
   font-family: Helvetica, Arial, sans-serif;
   margin: 0;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   padding: 0;
   font-weight: 100;
   font-size: 16px;
