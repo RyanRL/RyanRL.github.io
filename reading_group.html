@@ -1,1 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Renxiong Liu</title>
+	<meta name="google-site-verification" content="_icP2W3B6y_gFG92Dh-caUWIh_sEnE4tPu8pghzaH2w" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	  $("a").on('click', function(event) {
+	    if (this.hash !== "") {
+	      event.preventDefault();
+	
+	      var hash = this.hash;
+	
+	      $('html, body').animate({
+	        scrollTop: $(hash).offset().top
+	      }, 500, function(){
+	        window.location.hash = hash;
+	      });
+	    }
+	  });
+	});
+	</script>
+</head>
 
+<body>
+  <div class="banner">
+    <div id="header">
+      <div id="name">
+        <a class="link" href="index.html" >Renxiong Liu</a>
+      </div>
+      <div id="navigator">
+        <div class="nav_cell"><a class="nav" href="#notes">Notes</a></div>
+	      <div class="nav_cell"><a class="nav" href="#software">Software</a></div>
+	      <div class="nav_cell"><a class="nav" href="#miscellanea">Miscellanea</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="main">
+
+    <div class="content">
+      <div class="title">Notes</div>
+      <a class="anchor" id="notes"></a>
+
+      <div class="subtitle">Optimization: algorithm</div>
+       <ul>
+        <li>
+        Alternating Direction Method of Multipliers [<a href="https://web.stanford.edu/~boyd/papers/pdf/admm_slides.pdf">slides</a>] [<a href="https://web.stanford.edu/~boyd/papers/pdf/admm_slides.pdf">notes</a>]
+        </li>
+       </ul>
+
+      <div class="subtitle">Optimization: supplementary materials</div>
+	<ul>
+        <li>
+        On Lipschitz continuous gradient and strongly convexity. [notes]
+        </li>
+	</ul>
+      
+      <div class="subtitle">Graphical Model and Graph Signal Processing</div>
+       <ul>
+	<li>
+        Introduction to graphical model [<a href="https://www.cs.cmu.edu/~aarti/Class/10701/readings/graphical_model_Jordan.pdf">paper</a>] [<a href="https://www.cs.cmu.edu/~aarti/Class/10701/readings/graphical_model_Jordan.pdf">notes</a>]
+        </li>
+	<li>
+        Graphical LASSO [<a href="http://statweb.stanford.edu/~tibs/ftp/graph.pdf">paper</a>]
+        </li>
+	<li>
+        <font color="blue">Spectral Graph theory</font> [<a href="http://www.cs.yale.edu/homes/spielman/561/syllabus.html">course</a>] [notes]
+        </li>
+	<li>
+        <font color="blue">Statistical inference on graphs</font> [<a href="http://www.stat.yale.edu/~yw562/teaching/684/handouts.html">course</a>] [notes]
+        </li>
+       </ul> 
+	   
+
+    <hr>
+    <div class="content">
+      <div class="title">Software</div>
+      <a class="anchor" id="software"></a>
+       <ul> 
+	   <li>
+	   A tutorial for BLAS [<a href="https://web.stanford.edu/class/ee392o/nlas-foils.pdf">tutorial</a>]
+           </li>
+	   <li>
+           A tutorial for CUDA [<a href="https://jhui.github.io/2017/03/06/CUDA/">blog</a>].
+	   </li>
+       </ul>
+    </div>
+    <hr>
+	    
+    <div class="content">
+      <div class="title">Miscellanea</div>
+      <a class="anchor" id="miscellanea"></a>
+
+    </div>
+
+
+    </div> 
+  </div>
+  <div style="margin-top: 10px; text-align: center; font-size: 14px;">
+  Copyright &copy; 2019 - , <a class="link" href="https://lingxuez.github.io/" target="_blank">Lingxue Zhu</a>. All rights reserved.<br>
+  Last Updated: July 21, 2019
+  </div>
+
+	<!-- Start of StatCounter Code for Default Guide -->
+	<script type="text/javascript">
+		var sc_project=10595714; 
+		var sc_invisible=1; 
+		var sc_security="ee39bc4f"; 
+		var scJsHost = (("https:" == document.location.protocol) ?
+			"https://secure." : "http://www.");
+		document.write("<sc"+"ript type='text/javascript' src='" +
+			scJsHost+
+			"statcounter.com/counter/counter.js'></"+"script>");
+	</script>
+	<noscript><div class="statcounter"><a title="shopify visitor
+		statistics" href="http://statcounter.com/shopify/"
+		target="_blank"><img class="statcounter"
+		src="http://c.statcounter.com/10595714/0/ee39bc4f/1/"
+		alt="shopify visitor statistics"></a></div></noscript>
+		<!-- End of StatCounter Code for Default Guide -->
+
+</body>
+</html>
