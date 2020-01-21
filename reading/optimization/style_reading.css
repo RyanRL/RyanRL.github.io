@@ -4,7 +4,7 @@ div, ul, img {
 }
 */
 body {
-  background-image: url('../images/background3.jpg');
+  background-image: url('../../images/background3.jpg');
   background-color: #F0F3C7;
   font-family: Helvetica, Arial, sans-serif;
   margin: 0;
