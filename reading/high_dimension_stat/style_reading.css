@@ -4,7 +4,7 @@ div, ul, img {
 }
 */
 body {
-  background-image: url('../images/background3.jpg');
+  background-image: url('../../images/background3.jpg');
   background-color: #F0F3C7;
   font-family: Helvetica, Arial, sans-serif;
   margin: 0;
@@ -26,7 +26,7 @@ body {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-image: url('../images/banner3.png');
+  background-image: url('../../images/banner3.png');
   opacity: 0.9;
   background-color: rgba(0,0,0,0.8);
   height: 60px;
