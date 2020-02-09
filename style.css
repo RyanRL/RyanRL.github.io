@@ -152,3 +152,10 @@ ul#news li {
   margin-top: 0px;
   margin-bottom: 0px;
 }
+ul.fans li {
+  display: inline-block;
+}
+figcaption {
+  text-align: center
+}
+
