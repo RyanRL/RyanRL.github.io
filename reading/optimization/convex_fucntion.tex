@@ -1,0 +1,183 @@
+\input lec_preamble.tex
+
+%% REFERENCE DEFAULT COMMENTS
+%\newtheorem{theorem}{Theorem}[chapter]
+%\newtheorem{corollary}{Corollary}[chapter]
+%\newtheorem{lemma}{Lemma}[chapter]
+%\newtheorem{observation}{Observation}[chapter]
+%\newtheorem{proposition}{Proposition}[chapter]
+%\newtheorem{claim}{Claim}[chapter]
+%\newtheorem{fact}{Fact}[chapter]
+%\newtheorem{assumption}{Assumption}[chapter]
+%\theoremstyle{definition}
+%\newtheorem{definition}{Definition}[chapter]
+%\newtheorem{remark}{Remark}[chapter]
+%\newtheorem{example}{Example}[chapter]
+
+%% YOUR LOCAL MACROS AND PACKAGE GO HERE
+%\newcommand{\Expect}{\mathbb{E}}
+%\newcommand{\Prob}{\mathbb{P}}
+%\newcommand{\calF}{\mathcal{F}}
+%\newcommand{\calX}{\mathcal{X}}
+%\newcommand{\matx}{\ensuremath{\mathcal{X}}}
+%\def\PP{\mathbb{P}}
+%\newcommand{\matf}{\ensuremath{\mathcal{F}}}
+
+%% SOME RULES
+%% - only use pdfLaTeX to compile!!
+%% - for aligned equations, use align, do NOT use eqnarray
+%% - Use \| instead of ||, e.g., for divergence D(P\|Q), norms \|x\|_2
+%% - for unreferenced displayed math, use \[\] and do not number them
+%% - for labeling, use the following convention
+%%          theorem: 			\label{thm:fermat}
+%%          definition: 	\label{def:entropy}
+%%          lemma: 				\label{lmm:fermat}
+%%          proposition: 	\label{prop:fermat}, etc
+%% - for bibliography use bibtex and add your entry to bibnotes.bib
+
+
+%% lecture starts below
+%% 1. lecture number (also name the file accordingly like lec01.tex)
+%% 2. title (short summary of the content)
+%% 3. scribe name (that is you)
+%% 4. lecture date
+\mlecture{3}{Convex Function}
+\begin{document}
+We summarize some basic results for convex function in this notes.
+
+\section{Basic definition}
+We first introduce some definitions related with convex function.
+\begin{definition}[Convex function]
+A function $f:\mathbb R^n\rightarrow \mathbb R$ is called a convex function if 
+\begin{itemize}
+\item $\textbf{dom} (f)$ is a convex set.
+\item For all $\alpha\in [0,1]$ and $x, y\in \textbf{dom}(f)$, it holds that
+\begin{equation}
+f(\alpha x+(1-\alpha)y)\leq \alpha f(x)+(1-\alpha) f(y)
+\end{equation}
+\end{itemize}
+\end{definition}
+\textbf{Remark.} if instead for all $\alpha\in [0,1]$, $x, y\in \textbf{dom}(f)$ with $x\neq y$, it holds that
+\begin{equation}
+f(\alpha x+(1-\alpha)y)< \alpha f(x)+(1-\alpha) f(y)
+\end{equation}
+then $f$ is a strictly convex function.
+
+\begin{proposition}
+A function $f:\mathbb R^n\rightarrow \mathbb R$ is convex if and only if for any $x\in \textbf{dom}(f)$, function
+$g(t)=f(x+tv)$ is convex.
+\end{proposition}
+
+\section{First-order condition}
+In this section, we assume function $f: \mathbb R^n\rightarrow \mathbb R$
+is differentiable for any $x\in \textbf{dom}(f)$. 
+The following two propositions establish the sufficient and necessary conditions
+to justify the convexity of a function.
+
+\begin{proposition}
+\label{pro:first_order_condition}
+ A differentiable function $f:\mathbb R^n\rightarrow \mathbb R$ is convex if and only if for any $x, y\in \textbf{dom}(f)$, it holds that
+\begin{equation}
+f(y) \geq f(x)+\nabla f(x)^\top (y-x)
+\end{equation}
+Similarly, $f:\mathbb R^n\rightarrow \mathbb R$ is strictly convex if and only if for any $x, y\in \textbf{dom}(f)$ with $x\neq y$, it holds that
+\begin{equation}
+f(y) > f(x)+\nabla f(x)^\top (y-x)
+\end{equation}
+\end{proposition}
+
+A quick results based on Proposition \ref{pro:first_order_condition} is, 
+\begin{proposition}
+ A differentiable function $f:\mathbb R^n\rightarrow \mathbb R$ is convex if and only if for any $x, y\in \textbf{dom}(f)$, it holds that
+\begin{equation}
+\langle \nabla f(x)-\nabla f(y), x-y\rangle \geq 0
+\end{equation}
+Similarly, $f:\mathbb R^n\rightarrow \mathbb R$ is strictly convex if and only if for any $x, y\in \textbf{dom}(f)$ with $x\neq y$, it holds that
+\begin{equation}
+\langle \nabla f(x)-\nabla f(y), x-y\rangle >0
+\end{equation}
+\end{proposition}
+
+\section{Second order condition}
+Throughout this section, we will assume function $f: \mathbb R^n\rightarrow \mathbb R$
+is twice differentiable for any $x\in \textbf{dom}(f)$,
+meaning that $\nabla^2 f(x)$ exists for any $x\in \textbf{dom}(f)$.
+\begin{proposition}
+ A twice differentiable function $f:\mathbb R^n\rightarrow \mathbb R$ is convex if and only if for any $x\in \textbf{dom}(f)$, it holds that
+\begin{equation}
+\nabla^2 f(x) \succeq 0
+\end{equation}
+\end{proposition}
+\textbf{Remark.} A strictly convex function does not necessarily satisfy $\nabla^2 f(x) \succ 0$. 
+However, if $f$ satisfies $\nabla^2 f(x) \succ 0$, 
+then we must have that $f$ is a strictly convex function.
+
+\section{Epigraph method}
+In this section, we formally introduce the notion of epigraph, with which we can justify whether a function is convex or not.
+Toward this end, we first define the $\alpha$-sublevel set of function $f$ to be
+\begin{equation}
+C_\alpha=\{x\in \mathbb R^n \mid f(x)\leq \alpha\}
+\end{equation}
+It's easy to see that when $f$ is convex, then for any $\alpha\in \mathbb R$, $C_\alpha$ is a convex set.
+The converse is not true. For example $f(x)=-e^x$ satisfies for any $\alpha\in \mathbb R$, $C_\alpha$ is a convex set,
+but $f$ is concave.
+
+Now we trun to the points of epigraph. The epigraph of a function $f:\mathbb R^n\rightarrow \mathbb R$ is defined as
+\begin{equation}
+\text{epi} (f)=\{(x, \alpha)\mid f(x)\leq \alpha\}
+\end{equation}
+A useful tool to justify if function $f$ is convex is via the epigraph. More specifically, we have the following proposition.
+\begin{proposition}
+function is convex if and only if its epigraph is a convex set.
+\end{proposition}
+A direct corollary for a differentiable function $f$ is: if $(x, \alpha)\in \text{epi}(f)$, then it holds that
+\begin{equation}
+\alpha \geq f(x) \geq f(y)+\nabla f(y)^\top (x-y)
+\end{equation}
+
+\section{Operations that preserve convexity}
+In this section, we introduce some operations that will preseve the convexity of original functions. This will be quite useful to help us justify the convexity of some complicated functions.
+\begin{proposition}[Nonnegative weighted sums]
+Let $f_1,f_2,\ldots, f_n$ be a list of convex functions, then for any $\alpha_1,\alpha_2,\ldots, \alpha_n$, we have that $\sum_{k=1}^n \alpha_k f_k$ is also convex over $\cap_{k=1}^n \textbf{dom} f_k$.
+\end{proposition}
+\textbf{Remark.} As an extension, let $f(x, y)$ be convex in $x$ for any $y$, then we have that $g(x)=\int_S w(y) f(x,y) dy$ is also a convex function.
+
+\begin{proposition}[Composition with an affine mapping]
+let $f:\mathbb R^n\rightarrow \mathbb R$ be convex. Then for any $A\in \mathbb R^{m\times n}$ and $b\in \mathbb R^m$, function $g(x)=f(Ax+b)$ is convex.
+\end{proposition}
+
+\begin{proposition}[Pointwise supremum]
+let $f_\alpha:\mathbb R^n\rightarrow \mathbb R$ be a set of convex functions. Then $g(x)=\sup_\alpha f_\alpha(x)$ is convex.
+\end{proposition}
+\textbf{Remark.} As a corollary, if for each $y\in \mathcal A$, $f(x,y)$ is convex in $x$, then $g(x)=\sup_{y\in \mathcal A} f(x,y)$ is convex.
+
+\textbf{Remark 2.} Another corollary is, we can always represent a convex function as the pointwise supremum of any affine function. That is for any convex function $f$, we have that
+\begin{equation}
+f(x)=\sup \{g(x)\mid g \text{ if affine, $g(z)\leq f(z)$ for any $z\in \textbf{dom}(f)$}\}
+\end{equation}
+
+\begin{proposition}[Minimization]
+Let $f: \mathbb R^p \times \mathbb R^q \rightarrow \mathbb R$ be a convex function, $C$ be a convex set. Then $g(x)=\inf_{y\in C} f(x,y)$ is convex.
+\end{proposition}
+
+\section{Conjugate function}
+For any $f:\mathbb R^n\rightarrow \mathbb R$, we define the conjugate function of $f$ to be
+\begin{equation}
+f^\star(y)=\sup_x \langle y, x\rangle- f(x)
+\end{equation}
+It's easy to see that $f^\star$ is always a convex function. Moreover, by definition, Fenchel’s inequality holds:
+\begin{equation}
+f(x)+f^\star(y) \geq \langle x, y\rangle
+\end{equation}
+Another important property of conjugate function is given as follows.
+\begin{proposition}
+If $f$ is convex and closed (i.e. $\textbf{epi} (f)$ is a closed set), then $f^{\star\star}=f$.
+\end{proposition}
+
+\end{document}
+
+
+
+
+
+
